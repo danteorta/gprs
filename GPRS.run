@@ -1,0 +1,81 @@
+-- Default AD-GPRS header file --
+-- For more options use AD-GPRS manuals  --
+-- Header file is valid for geomechanical module --
+-- Layout by Timur Garipov --
+MODEL
+NATURAL KVALUE THERMAL 5 3 /
+
+VERBOSE
+DEBUG ALL
+/
+
+LINEAR
+GMRES_R CPR0 1e-10 500 /
+/
+
+NONLINEAR
+APPL 1e-4 25 5
+/
+
+FACILITY
+1e-3
+/
+
+INCLUDE
+model/dimens.txt
+/
+
+INCLUDE
+model/depth.txt
+/
+
+INCLUDE
+model/flow_properties.txt
+/
+
+INCLUDE
+model/poro.txt
+/
+
+INCLUDE
+model/transn.txt
+/
+
+INCLUDE
+model/volumes.txt
+/
+
+INCLUDE
+model/props.txt
+/
+
+INCLUDE
+model/kval.txt
+/
+
+INCLUDE
+model/scal.txt
+/
+
+SCOND
+275. 343. 9.80665e-5/
+/
+
+INCLUDE
+model/wells.txt
+/
+------------------
+OUTPUT
+ASCII TIME DanteModel /
+/
+
+TUNING
+1e-2 1.0 1e-3 2.0
+/
+
+TSTEP
+1*3
+/
+
+END
+/
